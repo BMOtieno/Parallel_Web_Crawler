@@ -90,10 +90,10 @@ final class ParallelWebCrawler implements WebCrawler {
           return false;
         }
       }
-      if(urlsVisited.contains(urlVisited)){
+      if(!urlsVisited.add(urlVisited)){
         return false;
       }
-      urlsVisited.add(urlVisited);
+
       PageParser.Result resultOfTheParser = pageParserFactory.get(urlVisited).parse();
 
       for(Map.Entry<String, Integer> myVariable : resultOfTheParser.getWordCounts().entrySet()){
