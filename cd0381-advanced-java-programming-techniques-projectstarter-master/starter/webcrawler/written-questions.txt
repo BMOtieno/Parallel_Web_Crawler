@@ -56,11 +56,11 @@ Q4. Identify three (3) different design patterns used in this project, and expla
     chance of the proxy throwing an UndeclaredThrowableException which can be a learning curve to debug if a developer doesn't use the catch statement
     to catch the illegalAccessExemption
     
-    Builder method which is applied to the CrawlerConfiduration, CrawlResult, and PageParser interface classes, I disliked it because using this 
+    Builder method which is applied to the CrawlerConfiguration, CrawlResult, and PageParser interface classes, I disliked it because using this
     design pattern significantly increases the amount of code. Also, you will only know there is a problem with the code at runtime instead before compilation.
     
     Dependency injection is applied to the WebCrawlerMain and Profiler classes. One thing I disliked about it is how it increased the number of classes in the 
-    project and also how it made the ode difficult to trace thus one has to refer to more files to follow what is going on. 
+    project and also how it made the code difficult to trace thus one has to refer to more files to follow what is going on.
 
 
 
