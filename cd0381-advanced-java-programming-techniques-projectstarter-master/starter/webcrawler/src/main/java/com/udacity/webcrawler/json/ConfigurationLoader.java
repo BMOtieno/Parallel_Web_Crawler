@@ -58,12 +58,7 @@ public final class ConfigurationLoader {
 
     //wrap in a try catch for read value to deserialize
     try{
-      CrawlerConfiguration crawlerconfiguration = objectMapper.readValue(reader, CrawlerConfiguration.Builder.class).build();
-      return crawlerconfiguration;
-    } catch (StreamReadException e) {
-      throw new RuntimeException(e);
-    } catch (DatabindException e) {
-      throw new RuntimeException(e);
+      return objectMapper.readValue(reader, CrawlerConfiguration.Builder.class).build();
     } catch (IOException e) {
       throw new RuntimeException(e);
     }

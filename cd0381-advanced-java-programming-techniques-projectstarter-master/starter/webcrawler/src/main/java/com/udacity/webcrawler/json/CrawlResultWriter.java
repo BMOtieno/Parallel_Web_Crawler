@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Objects;
 
 /**
@@ -38,7 +39,7 @@ public final class CrawlResultWriter {
     // TODO: Fill in this method.
 
     //write the JSON string from a file Path provided from the CrawlResultWriter constructor
-    try(Writer writer = Files.newBufferedWriter(path)){
+    try(Writer writer = Files.newBufferedWriter(path, StandardOpenOption.CREATE)){
       write(writer);
     }
   }

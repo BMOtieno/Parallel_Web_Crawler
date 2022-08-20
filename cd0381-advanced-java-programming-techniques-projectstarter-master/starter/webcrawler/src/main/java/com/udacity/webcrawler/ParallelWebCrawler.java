@@ -66,11 +66,11 @@ final class ParallelWebCrawler implements WebCrawler {
     return new CrawlResult.Builder().setWordCounts(WordCounts.sort(wordCounts, popularWordCount)).setUrlsVisited(urlsVisited.size()).build();
   }
   public class CrawlInternal extends RecursiveTask<Boolean> {
-    private String urlVisited;
-    private Instant deadline;
-    private int maxDepth;
-    private ConcurrentHashMap<String, Integer> wordCounts;
-    private ConcurrentSkipListSet<String> urlsVisited;
+    private final String urlVisited;
+    private final Instant deadline;
+    private final int maxDepth;
+    private final ConcurrentHashMap<String, Integer> wordCounts;
+    private final ConcurrentSkipListSet<String> urlsVisited;
 
     public CrawlInternal(String urlVisited, Instant deadline, int maxDepth, ConcurrentHashMap<String, Integer> wordCounts, ConcurrentSkipListSet<String> urlsVisited) {
       this.urlVisited = urlVisited;
